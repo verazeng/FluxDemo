@@ -1,11 +1,15 @@
-var MyButton = React.createClass ({
-  render: function() {
+var MyButton = React.createClass({
+
+  render: function () {
+    var items = this.props.items.map((item, i)=>(<li key={i}>{item}</li>));
     return (
       <div>
-        <button>my button</button>
+        <button onClick={this.props.onClick}>my button</button>
+        <ul>{items}</ul>
       </div>
     );
   }
+
 });
 
 module.exports = MyButton;
